@@ -29,8 +29,6 @@ def generate_image(seed, width, height, mean, std):
     return image.astype(np.uint8)
     ### END CODE HERE ###
 
-    return image
-
 def main():
     # Argument parser
     parser = argparse.ArgumentParser(description="Generate an image with pixel values sampled from a normal distribution.")
