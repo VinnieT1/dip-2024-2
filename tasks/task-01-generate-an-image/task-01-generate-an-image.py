@@ -18,16 +18,10 @@ def generate_image(seed, width, height, mean, std):
     """
     ### START CODE HERE ###
     np.random.seed(seed)
-    image = np.random.normal(mean, std, (height, width))
-
-    while True: # resamples values outside byte range
-        values_outside_range = (image < 0) | (image > 255)
-        if not np.any(values_outside_range):
-            break
-        image[values_outside_range] = np.random.normal(loc=mean, scale=std, size=np.count_nonzero(values_outside_range))
-
-    return image.astype(np.uint8)
+    image = np.random.normal(mean, std, (height, width)).astype(np.uint8)
     ### END CODE HERE ###
+
+    return image
 
 def main():
     # Argument parser
